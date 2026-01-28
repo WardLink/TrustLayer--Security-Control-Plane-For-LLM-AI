@@ -6,7 +6,7 @@
 
 **Stop prompt injection attacks. Detect agent drift. Kill switch when it matters.**
 
-[![Get API Key](https://img.shields.io/badge/🚀_Get_Started-RapidAPI-0055FF?style=for-the-badge)](https://rapidapi.com/nimblyjson-nimblyjson-default/api/trustlayer-ai-control-plane-for-safe-llms-agents)
+[![Get API Key](https://img.shields.io/badge/🚀_Get_Started-RapidAPI-0055FF?style=for-the-badge)](https://rapidapi.com/sk31898/api/trustlayer-ai-control-plane-for-safe-llms-agents)
 [![Latency](https://img.shields.io/badge/Latency-<10ms-00C853?style=for-the-badge)]()
 [![Uptime](https://img.shields.io/badge/Uptime-99.9%25-00C853?style=for-the-badge)]()
 
@@ -18,7 +18,7 @@
 
 **Trusted by teams building production AI systems**
 
-[Documentation](./rapidapi-pack/RAPIDAPI_DOCS_COMPLETE.md) • [API Reference](#-api-endpoints) • [Get API Key](https://rapidapi.com/nimblyjson-nimblyjson-default/api/trustlayer-ai-control-plane-for-safe-llms-agents) • [Postman Collection](./postman/)
+[Documentation](./rapidapi-pack/RAPIDAPI_DOCS_COMPLETE.md) • [API Reference](#-api-endpoints) • [Get API Key](https://rapidapi.com/sk31898/api/trustlayer-ai-control-plane-for-safe-llms-agents) • [Postman Collection](./postman/)
 
 </div>
 
@@ -61,7 +61,7 @@ curl -X POST "https://trustlayer-ai-control-plane-for-safe-llms-agents.p.rapidap
 
 <div align="center">
 
-[![Get Your API Key](https://img.shields.io/badge/Get_Your_API_Key-Start_Free-success?style=for-the-badge)](https://rapidapi.com/nimblyjson-nimblyjson-default/api/trustlayer-ai-control-plane-for-safe-llms-agents)
+[![Get Your API Key](https://img.shields.io/badge/Get_Your_API_Key-Start_Free-success?style=for-the-badge)](https://rapidapi.com/sk31898/api/trustlayer-ai-control-plane-for-safe-llms-agents)
 
 </div>
 
@@ -351,7 +351,7 @@ Protect AI NPCs and game masters from player exploitation.
 
 <div align="center">
 
-[![View Pricing](https://img.shields.io/badge/View_Pricing-RapidAPI-blue?style=for-the-badge)](https://rapidapi.com/nimblyjson-nimblyjson-default/api/trustlayer-ai-control-plane-for-safe-llms-agents)
+[![View Pricing](https://img.shields.io/badge/View_Pricing-RapidAPI-blue?style=for-the-badge)](https://rapidapi.com/sk31898/api/trustlayer-ai-control-plane-for-safe-llms-agents)
 
 </div>
 
@@ -388,7 +388,7 @@ Protect AI NPCs and game masters from player exploitation.
 
 ### Protect your AI in 5 minutes
 
-[![Get API Key](https://img.shields.io/badge/Get_API_Key-Start_Building-success?style=for-the-badge&logo=rocket)](https://rapidapi.com/nimblyjson-nimblyjson-default/api/trustlayer-ai-control-plane-for-safe-llms-agents)
+[![Get API Key](https://img.shields.io/badge/Get_API_Key-Start_Building-success?style=for-the-badge&logo=rocket)](https://rapidapi.com/sk31898/api/trustlayer-ai-control-plane-for-safe-llms-agents)
 
 **No credit card required for free tier**
 
@@ -399,7 +399,7 @@ Protect AI NPCs and game masters from player exploitation.
 ## 🤝 Contact & Support
 
 - **Email**: sk31898@googlemail.com
-- **RapidAPI**: [Message Us](https://rapidapi.com/nimblyjson-nimblyjson-default/api/trustlayer-ai-control-plane-for-safe-llms-agents)
+- **RapidAPI**: [Message Us](https://rapidapi.com/sk31898/api/trustlayer-ai-control-plane-for-safe-llms-agents)
 
 ---
 
