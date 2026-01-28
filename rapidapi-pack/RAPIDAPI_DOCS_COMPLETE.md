@@ -711,7 +711,7 @@ echo "✅ Safety check passed"
 ## 📞 Support
 
 Questions? Issues?
-- Email: support@trustlayer.ai
+- Email: sk31898@googlemail.com
 - RapidAPI Discussions
 
 ---

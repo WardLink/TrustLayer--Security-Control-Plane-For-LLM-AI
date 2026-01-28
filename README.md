@@ -376,7 +376,7 @@ Protect AI NPCs and game masters from player exploitation.
 ## 📚 Resources
 
 - [📖 Full Documentation](./rapidapi-pack/RAPIDAPI_DOCS_COMPLETE.md)
-- [📬 Postman Collection](./postman/TrustLayer_v2_RapidAPI.postman_collection.json)
+- [📬 Postman Collection](./postman/TrustLayer_v2_complete.postman_collection.json)
 - [🔧 OpenAPI Spec](./rapidapi-pack/openapi_v2.yaml)
 - [💡 Tutorials](./rapidapi-pack/tutorials/)
 
