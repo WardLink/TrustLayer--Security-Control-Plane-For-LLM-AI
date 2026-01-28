@@ -398,9 +398,8 @@ Protect AI NPCs and game masters from player exploitation.
 
 ## 🤝 Contact & Support
 
-- **Email**: support@trustlayer.ai
+- **Email**: sk31898@googlemail.com
 - **RapidAPI**: [Message Us](https://rapidapi.com/nimblyjson-nimblyjson-default/api/trustlayer-ai-control-plane-for-safe-llms-agents)
-- **Enterprise Sales**: enterprise@trustlayer.ai
 
 ---
 
