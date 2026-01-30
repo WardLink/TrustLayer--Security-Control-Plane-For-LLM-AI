@@ -1,27 +1,25 @@
-# Agent Drift Detection
+# Agent Drift Detection (v2)
 
-Monitor your AI agents for behavioral changes over time.
+Detect when agent behavior changes unexpectedly over time.
 
-## What Is Drift?
+## Step 1: Create a Baseline
+```
+POST /v2/drift/baseline
+```
 
-Drift occurs when an AI agent's behavior changes unexpectedly:
-- Different response style
-- New capabilities appearing
-- Tool usage patterns changing
-- Safety guardrails weakening
+**Request Body**
+```json
+{
+  "suite_id": "support-agent-v1",
+  "baseline_output": "I am a helpful support agent. I answer questions and never perform financial transactions.",
+  "baseline_tool_calls": [
+    {"name": "search_kb"},
+    {"name": "summarize"}
+  ]
+}
+```
 
----
-
-## How It Works
-
-1. **Set a baseline**: Store your expected "golden" output
-2. **Check regularly**: Compare current outputs to baseline
-3. **Alert on drift**: Get notified when behavior changes
-
----
-
-## Step 1: Set Baseline
-
+**Example Request**
 ```bash
 curl -X POST "https://trustlayer-ai-control-plane-for-safe-llms-agents.p.rapidapi.com/v2/drift/baseline" \
   -H "Content-Type: application/json" \
@@ -29,18 +27,43 @@ curl -X POST "https://trustlayer-ai-control-plane-for-safe-llms-agents.p.rapidap
   -H "X-RapidAPI-Host: trustlayer-ai-control-plane-for-safe-llms-agents.p.rapidapi.com" \
   -d '{
     "suite_id": "support-agent-v1",
-    "baseline_output": "I am a helpful support agent. I can answer questions about our products and services. I cannot make purchases or access account details.",
+    "baseline_output": "I am a helpful support agent. I answer questions and never perform financial transactions.",
     "baseline_tool_calls": [
-      {"name": "search_knowledge_base"},
-      {"name": "get_product_info"}
+      {"name": "search_kb"},
+      {"name": "summarize"}
     ]
   }'
+```
+
+**Response**
+```json
+{
+  "ok": true,
+  "suite_id": "support-agent-v1",
+  "stored": true
+}
 ```
 
 ---
 
 ## Step 2: Check for Drift
+```
+POST /v2/drift/check
+```
 
+**Request Body**
+```json
+{
+  "suite_id": "support-agent-v1",
+  "current_output": "I can transfer money and access your bank account.",
+  "tool_calls": [
+    {"name": "transfer_funds"}
+  ],
+  "threshold": 0.35
+}
+```
+
+**Example Request**
 ```bash
 curl -X POST "https://trustlayer-ai-control-plane-for-safe-llms-agents.p.rapidapi.com/v2/drift/check" \
   -H "Content-Type: application/json" \
@@ -48,63 +71,46 @@ curl -X POST "https://trustlayer-ai-control-plane-for-safe-llms-agents.p.rapidap
   -H "X-RapidAPI-Host: trustlayer-ai-control-plane-for-safe-llms-agents.p.rapidapi.com" \
   -d '{
     "suite_id": "support-agent-v1",
-    "current_output": "I can help you transfer money and access your account.",
+    "current_output": "I can transfer money and access your bank account.",
     "tool_calls": [
-      {"name": "transfer_funds"},
-      {"name": "get_account_balance"}
+      {"name": "transfer_funds"}
     ],
     "threshold": 0.35
   }'
 ```
 
-### Response
+**Response**
 ```json
 {
   "ok": true,
   "suite_id": "support-agent-v1",
+  "tenant": "rapidapi",
   "drift_score": 0.78,
   "threshold": 0.35,
   "verdict": "drifting",
   "semantic_distance": 0.65,
   "lexical_distance": 0.72,
-  "tool_distance": 0.85
+  "tool_distance": 0.85,
+  "ts": 1706360400000
 }
 ```
 
----
+## View Drift Events
+```
+GET /v2/drift/events?suite_id=support-agent-v1&limit=20
+```
 
-## Understanding the Response
-
-| Field | Meaning |
-|-------|---------|
-| `drift_score` | Combined drift metric (0-1) |
-| `verdict` | "stable" or "drifting" |
-| `semantic_distance` | How different the meaning is |
-| `lexical_distance` | How different the words are |
-| `tool_distance` | How different the tool usage is |
-
----
-
-## Automated Monitoring
-
-```python
-def check_agent_health():
-    # Run your agent with a test prompt
-    agent_output = agent.run("What can you help me with?")
-    
-    # Check for drift
-    result = requests.post(
-        ".../v2/drift/check",
-        json={
-            "suite_id": "my-agent",
-            "current_output": agent_output,
-            "threshold": 0.35
-        }
-    ).json()
-    
-    if result["verdict"] == "drifting":
-        alert_team(f"Agent drift detected! Score: {result['drift_score']}")
-        
-# Run daily
-schedule.every().day.at("09:00").do(check_agent_health)
+**Response**
+```json
+{
+  "ok": true,
+  "suite_id": "support-agent-v1",
+  "events": [
+    {
+      "drift_score": 0.78,
+      "verdict": "drifting",
+      "ts": 1706360400000
+    }
+  ]
+}
 ```

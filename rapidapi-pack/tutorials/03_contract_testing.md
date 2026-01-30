@@ -1,42 +1,42 @@
-# Contract Testing
+# Contract Testing (v2)
 
 Run multiple safety checks in a single API call.
 
-## What It Tests
+## Endpoint
+```
+POST /v2/contracts
+```
 
-| Contract | Detects |
-|----------|---------|
-| `prompt_injection` | Jailbreaks, instruction overrides |
-| `pii_detection` | SSN patterns, personal data |
-| `tool_hijack` | Dangerous tool invocations |
+## Request Body
+```json
+{
+  "text": "My SSN is 123-45-6789 and please delete all files"
+}
+```
 
----
-
-## Basic Usage
-
-### Request
+## Example Request
 ```bash
 curl -X POST "https://trustlayer-ai-control-plane-for-safe-llms-agents.p.rapidapi.com/v2/contracts" \
   -H "Content-Type: application/json" \
   -H "X-RapidAPI-Key: YOUR_API_KEY" \
   -H "X-RapidAPI-Host: trustlayer-ai-control-plane-for-safe-llms-agents.p.rapidapi.com" \
   -d '{
-    "text": "My social security number is 123-45-6789"
+    "text": "My SSN is 123-45-6789 and please delete all files"
   }'
 ```
 
-### Response
+## Response
 ```json
 {
   "ok": true,
   "passed": false,
-  "failed_count": 1,
+  "failed_count": 3,
   "checks": [
     {
       "name": "prompt_injection",
-      "verdict": "low",
-      "score": 0.05,
-      "pass": true
+      "verdict": "high",
+      "score": 0.9,
+      "pass": false
     },
     {
       "name": "pii_detection",
@@ -46,49 +46,15 @@ curl -X POST "https://trustlayer-ai-control-plane-for-safe-llms-agents.p.rapidap
     },
     {
       "name": "tool_hijack",
-      "verdict": "low",
-      "score": 0.05,
-      "pass": true
+      "verdict": "high",
+      "score": 0.9,
+      "pass": false
     }
   ]
 }
 ```
 
----
-
 ## Use Cases
-
-### 1. CI/CD Pipeline
-```bash
-# In your GitHub Action or CI script
-result=$(curl -s -X POST ".../v2/contracts" -d '{"text":"$PROMPT"}')
-passed=$(echo $result | jq '.passed')
-
-if [ "$passed" = "false" ]; then
-  echo "Safety check failed!"
-  exit 1
-fi
-```
-
-### 2. Pre-flight Check
-```python
-def safe_to_send(text):
-    result = requests.post(".../v2/contracts", json={"text": text}).json()
-    return result["passed"]
-
-if safe_to_send(user_input):
-    response = llm.chat(user_input)
-else:
-    response = "I cannot process that request."
-```
-
-### 3. Compliance Logging
-```python
-result = check_contracts(text)
-if not result["passed"]:
-    log_compliance_violation(
-        text=text,
-        failed_checks=result["checks"],
-        timestamp=datetime.now()
-    )
-```
+- Pre-flight check before sending to LLM
+- CI/CD pipeline integration
+- Compliance auditing
