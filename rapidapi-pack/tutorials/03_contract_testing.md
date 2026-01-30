@@ -18,7 +18,7 @@ Run multiple safety checks in a single API call.
 ```bash
 curl -X POST "https://trustlayer-ai-control-plane-for-safe-llms-agents.p.rapidapi.com/v2/contracts" \
   -H "Content-Type: application/json" \
-  -H "X-RapidAPI-Key: YOUR_KEY" \
+  -H "X-RapidAPI-Key: YOUR_API_KEY" \
   -H "X-RapidAPI-Host: trustlayer-ai-control-plane-for-safe-llms-agents.p.rapidapi.com" \
   -d '{
     "text": "My social security number is 123-45-6789"

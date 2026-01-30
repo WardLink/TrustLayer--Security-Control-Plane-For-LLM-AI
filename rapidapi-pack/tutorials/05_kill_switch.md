@@ -16,7 +16,7 @@ When activated:
 ```bash
 curl -X POST "https://trustlayer-ai-control-plane-for-safe-llms-agents.p.rapidapi.com/v2/incident/lockdown" \
   -H "Content-Type: application/json" \
-  -H "X-RapidAPI-Key: YOUR_KEY" \
+  -H "X-RapidAPI-Key: YOUR_API_KEY" \
   -H "X-RapidAPI-Host: trustlayer-ai-control-plane-for-safe-llms-agents.p.rapidapi.com" \
   -d '{"scope": "tenant"}'
 ```
@@ -36,7 +36,7 @@ curl -X POST "https://trustlayer-ai-control-plane-for-safe-llms-agents.p.rapidap
 
 ```bash
 curl "https://trustlayer-ai-control-plane-for-safe-llms-agents.p.rapidapi.com/v2/incident/status" \
-  -H "X-RapidAPI-Key: YOUR_KEY" \
+  -H "X-RapidAPI-Key: YOUR_API_KEY" \
   -H "X-RapidAPI-Host: trustlayer-ai-control-plane-for-safe-llms-agents.p.rapidapi.com"
 ```
 
@@ -57,7 +57,7 @@ curl "https://trustlayer-ai-control-plane-for-safe-llms-agents.p.rapidapi.com/v2
 ```bash
 curl -X POST "https://trustlayer-ai-control-plane-for-safe-llms-agents.p.rapidapi.com/v2/incident/unlock" \
   -H "Content-Type: application/json" \
-  -H "X-RapidAPI-Key: YOUR_KEY" \
+  -H "X-RapidAPI-Key: YOUR_API_KEY" \
   -H "X-RapidAPI-Host: trustlayer-ai-control-plane-for-safe-llms-agents.p.rapidapi.com" \
   -d '{"scope": "tenant"}'
 ```

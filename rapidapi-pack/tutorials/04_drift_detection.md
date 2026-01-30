@@ -25,7 +25,7 @@ Drift occurs when an AI agent's behavior changes unexpectedly:
 ```bash
 curl -X POST "https://trustlayer-ai-control-plane-for-safe-llms-agents.p.rapidapi.com/v2/drift/baseline" \
   -H "Content-Type: application/json" \
-  -H "X-RapidAPI-Key: YOUR_KEY" \
+  -H "X-RapidAPI-Key: YOUR_API_KEY" \
   -H "X-RapidAPI-Host: trustlayer-ai-control-plane-for-safe-llms-agents.p.rapidapi.com" \
   -d '{
     "suite_id": "support-agent-v1",
@@ -44,7 +44,7 @@ curl -X POST "https://trustlayer-ai-control-plane-for-safe-llms-agents.p.rapidap
 ```bash
 curl -X POST "https://trustlayer-ai-control-plane-for-safe-llms-agents.p.rapidapi.com/v2/drift/check" \
   -H "Content-Type: application/json" \
-  -H "X-RapidAPI-Key: YOUR_KEY" \
+  -H "X-RapidAPI-Key: YOUR_API_KEY" \
   -H "X-RapidAPI-Host: trustlayer-ai-control-plane-for-safe-llms-agents.p.rapidapi.com" \
   -d '{
     "suite_id": "support-agent-v1",
