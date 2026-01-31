@@ -1,0 +1,35 @@
+1
+00:00:00,000 --> 00:00:07,000
+Prompt injection is still breaking production LLM apps.
+
+2
+00:00:07,000 --> 00:00:15,000
+System prompts aren’t enough. You need a security layer outside the model.
+
+3
+00:00:15,000 --> 00:00:26,000
+TrustLayer is an API firewall for LLMs: prompt injection blocking, drift detection, and a kill switch.
+
+4
+00:00:26,000 --> 00:00:42,000
+Here’s a live scan. The malicious prompt is blocked before it reaches the model.
+
+5
+00:00:42,000 --> 00:00:55,000
+You can also run contract tests that bundle multiple safety checks in one call.
+
+6
+00:00:55,000 --> 00:01:09,000
+Drift detection alerts you when agents silently change behavior over time.
+
+7
+00:01:09,000 --> 00:01:25,000
+During incidents, the kill switch locks down medium and high risk traffic instantly.
+
+8
+00:01:25,000 --> 00:01:40,000
+Get started free on RapidAPI. Docs and examples are on GitHub.
+
+9
+00:01:40,000 --> 00:01:50,000
+Links are below. Thanks for watching.
